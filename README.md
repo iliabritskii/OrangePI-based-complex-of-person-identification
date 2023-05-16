@@ -1,59 +1,59 @@
-Программы в данном репозитории предназначены для настройки программно-аппаратного комплекса идентификации персоны на базе микрокомпьютера.
+The programs in this repository are designed to configure a person identification software and hardware complex based on a microcomputer.
 
-Для создания программно-аппаратного комплекса необходимо наличие микрокомпьютера и видеокамеры.  Рекомендовано использовать Linux в качестве операционной системы для программно-аппаратного комплекса.
+To create a hardware and software complex, a microcomputer and a video camera are required. It is recommended to use Linux as an operating system for the hardware and software complex.
 
-Алгоритм работы программно-аппаратного комплекса:
+The algorithm of the hardware and software complex:
 
-•	Выделение и сохранение в очередь на обработку кадров из видеопотока, на которых присутствует человек.
+• Allocation and saving to the queue for processing frames from the video stream on which a person is present.
 
-•	Обработка сохраненных фотографий, вычисление значений для векторов по точкам на лице человека.
+• Processing of saved photos, calculating values for vectors based on points on a person's face.
 
-•	Проверка на наличие человека в базе данных.
+• Checking for the presence of a person in the database.
 
-•	Запись времени появления человека в отчет, в случае успешной идентификации, и удаление фотографии. 
+• Record the time of the person's appearance in the report, in case of successful identification, and delete the photo.
 
-•	Перемещение фотографии и дальнейшее ее прикрепление к отчету, в случае, если человек не был опознан.
+• Moving the photo and further attaching it to the report, if the person has not been identified.
 
-•	Отправка отчета на электронную почту в выбранное при настройке программно-аппаратного комплекса время.
+• Sending the report by e-mail at the time selected when configuring the hardware and software complex.
 
-Некоторые программы при работе запускают друг друга, поэтому необходимо указать пути до файлов в коде программ в соответствие с размещением программ в вашей директории. 
+Some programs run each other when working, so you need to specify the paths to the files in the program code in accordance with the placement of programs in your directory.
 
-Описание программ:
+Description of programs:
 
-• add_new_people.ру - занесение нового человека в базу, запускается из GUI_new_people.
+• add_new_people.ru - adding a new person to the database, launched from GUI_new_people.
 
-• change_crontab.py - изменяет время отправки отчета на почту (запускается из GUI_login_agmin).
+• change_crontab.py - changes the time when the report is sent to the mail (launched from GUI_login_agmin).
 
-• create_dataset.py - создает пустой файл в нужном формате для занесения датасетов (запускается при удаление всех данных из базы).
+• create_dataset.py - creates an empty file in the desired format for entering datasets (it starts when all data is deleted from the database).
 
-• dataset – файл с эталонными данными для сравнения.
+• dataset – a file with reference data for comparison.
 
-• faces_recognition.ру - обработка сохраненной фотографии и распознавание человека.
+• faces_recognition.ru - processing of a saved photo and human recognition.
 
-• GUI_login_admin.ру - GUI для регистрации email и времени получения отчетов (создает mail.txt и time.txt).
+• GUI_login_admin.ru - GUI for email registration and time of receipt of reports (creates mail.txt and time.txt ).
 
-• GUI_new_people.ру - GUI для добавления новых людей в базу данных.
+• GUI_new_people.ru - GUI for adding new people to the database.
 
-• GUI_remove_dataset.py - GUI для удаления базы данных.
+• GUI_remove_dataset.py - GUI for deleting the database.
 
-• images_checker.sh – проверка на наличие фотографий, добавленных в очередь на обработку (необходимо автоматизировать запуск через Cron или другой планировщик задач).
+• images_checker.sh – checking for photos added to the processing queue (it is necessary to automate the launch via Cron or another task scheduler).
 
-• mail.txt – текстовый файл, в котором хранится почта для отправки отчетов. 
+• mail.txt – a text file that stores mail for sending reports.
 
-• people_recognition.ру - распознавание появления человека в кадре, делает фото (работает в фоне постоянно, необходимо поставить в автозапуск через Cron или другой планировщик задач).
+• people_recognition.ru - recognition of the appearance of a person in the frame, takes a photo (works in the background constantly, you need to put in autorun via Cron or another task scheduler).
 
-• remove.ру - удаляет отправленные отчеты и фото неопознанных людей.
+• remove.ru - deletes sent reports and photos of unidentified people.
 
-• report.xlsx, report.csv – файлы с отчетом.
+• report.xlsx , report.csv files with the report.
 
-• send_report.ру - отправка отчетов и фото на почту
+• <url> - sending reports and photos to the mail
 
-• table_creator.ру - создает файлы для отчетов после их удаления (отправки) (создает report.xlsx и report.csv)
+• table_creator.ru - creates files for reports after they are deleted (sent) (creates a report.xlsx and report.csv)
 
-• time.txt – текстовый файл, в котором хранится выбранное время отправки отчетов.
+• time.txt – a text file that stores the selected time for sending reports.
 
-• writer.ру - заносит данные о опознанном человеке в отчет
+• writer.ru - enters data about the identified person in the report
 
-• white.jpg – используется для добавления белого фона для надписи на фотографиях с неопознанными людьми.
+• white.jpg – used to add a white background for the inscription on photos with unidentified people.
 
-• GUI_login_admin.desktop, GUI_new_people.desktop, GUI_remove_dataset.desktop – ярлыки для запуска программ с графическим интерфейсом.
+• GUI_login_admin.desktop, GUI_new_people.desktop, GUI_remove_dataset.desktop – shortcuts for launching programs with a graphical interface.
