@@ -1,0 +1,11 @@
+[Desktop Entry]
+
+Type=Application
+
+Name=Email and Time
+
+Comment=email/time
+
+Exec=python3 GUI_login_admin.py					#way to program!!!!!!!
+
+Terminal=false

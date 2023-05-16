@@ -1,0 +1,12 @@
+[Desktop Entry]
+
+Type=Application
+
+Name=Email and Time
+
+Comment=database
+
+Exec=python3 /GUI_remove_dataset.py				#way to program!!!!
+
+Terminal=false
+Name[en]=remove_dataset
